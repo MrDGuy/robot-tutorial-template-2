@@ -14,7 +14,9 @@
         "assets.json",
         "main.py",
         "tilemap.g.jres",
-        "tilemap.g.ts"
+        "tilemap.g.ts",
+        "custom.ts",
+        "robot-move-1.gif"
     ],
     "testFiles": [
         "test.ts"
