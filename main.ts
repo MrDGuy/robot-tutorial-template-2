@@ -1,1 +1,5 @@
 tiles.loadMap(tiles.createMap(tilemap`level1`))
+tiles.createMap(tilemap` `)
+tiles.loadMap(tiles.createMap(tilemap` `))
+robot.beginScreen()
+robot.turnRight()
