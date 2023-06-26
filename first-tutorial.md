@@ -2,37 +2,70 @@
 
 ## Introduction @unplugged
 
-Explore with the robot!
+First create a character to star in your game!
 
-![Image description](https://github.com/Maynard-Jackson-Computer-Science/robot-extension-template1/blob/master/robot-move-1.gif)
-
-
+![Image description](https://raw.githubusercontent.com/microsoft/pxt-tutorial-sample/master/images/enemies.gif)
 
 ## Step One
 
-Use the ``||robot:move forward||`` block to move the robot.
+Use the ``||custom:make random background||`` block to add a background color.
 
 ```python
 // @highlight
-robot.move_forward()
+custom.makeRandomBackground()
 ```
 
 ## Step Two
 
-Determine whether the robot can move using the ``||robot:can move||`` block.
+Create a sprite with the ``||variables:set mySprite to||`` block.
 
 ```python
+custom.makeRandomBackground()
 // @highlight
-if robot.can_move("right"):
-    robot.turn_right()
-
+let mySprite = sprites.create(img`
+    . . . . . . . . . . b 5 b . . .
+    . . . . . . . . . b 5 b . . . .
+    . . . . . . . . . b c . . . . .
+    . . . . . . b b b b b b . . . .
+    . . . . . b b 5 5 5 5 5 b . . .
+    . . . . b b 5 d 1 f 5 5 d f . .
+    . . . . b 5 5 1 f f 5 d 4 c . .
+    . . . . b 5 5 d f b d d 4 4 . .
+    b d d d b b d 5 5 5 4 4 4 4 4 b
+    b b d 5 5 5 b 5 5 4 4 4 4 4 b .
+    b d c 5 5 5 5 d 5 5 5 5 5 b . .
+    c d d c d 5 5 b 5 5 5 5 5 5 b .
+    c b d d c c b 5 5 5 5 5 5 5 b .
+    . c d d d d d d 5 5 5 5 5 d b .
+    . . c b d d d d d 5 5 5 b b . .
+    . . . c c c c c c c c b b . . .
+`, SpriteKind.Player)
 ```
 
 ## Step Three
 
-Collect any coins with the detect coin ``||robot:detect coin||`` block.
+Add movement with the ``||controller:move mySprite with buttons||`` block.
 
 ```python
-if robot.detect_coin():
-    robot.collect_coin()
+custom.makeRandomBackground()
+let mySprite = sprites.create(img`
+    . . . . . . . . . . b 5 b . . .
+    . . . . . . . . . b 5 b . . . .
+    . . . . . . . . . b c . . . . .
+    . . . . . . b b b b b b . . . .
+    . . . . . b b 5 5 5 5 5 b . . .
+    . . . . b b 5 d 1 f 5 5 d f . .
+    . . . . b 5 5 1 f f 5 d 4 c . .
+    . . . . b 5 5 d f b d d 4 4 . .
+    b d d d b b d 5 5 5 4 4 4 4 4 b
+    b b d 5 5 5 b 5 5 4 4 4 4 4 b .
+    b d c 5 5 5 5 d 5 5 5 5 5 b . .
+    c d d c d 5 5 b 5 5 5 5 5 5 b .
+    c b d d c c b 5 5 5 5 5 5 5 b .
+    . c d d d d d d 5 5 5 5 5 d b .
+    . . c b d d d d d 5 5 5 b b . .
+    . . . c c c c c c c c b b . . .
+`, SpriteKind.Player)
+// @highlight
+controller.moveSprite(mySprite)
 ```
