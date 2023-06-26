@@ -1,1 +1,5 @@
 tiles.load_map(tiles.create_map(tilemap("""level1""")))
+tiles.create_map(tilemap(""" """))
+tiles.load_map(tiles.create_map(tilemap(""" """)))
+robot.begin_screen()
+robot.turn_right()
